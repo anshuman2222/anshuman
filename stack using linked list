@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct stack
+{
+	int data;
+	struct stack *next;
+}node;
+
+node *
+push (node **s, int data)
+{
+	node *tmp = (node *) malloc (sizeof (node));
+	if (tmp == NULL) return NULL;
+	
+	tmp->data = data;
+	tmp->next = *s;
+	*s = tmp;
+}
+
+int main()
+{
+	node *s = NULL;
+	push (&s, 10);
+	push (&s, 20);
+	push (&s, 30);
+	
+	node *tmp = s;
+	while(tmp)
+	{
+		printf("%d  ", tmp->data);
+		tmp = tmp -> next;
+	}
+}
