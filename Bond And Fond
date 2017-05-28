@@ -1,0 +1,40 @@
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+
+int main ()
+{
+	long long t, n, num;
+	
+	cin>>t;
+	
+	while (t--)
+	{
+		cin>>n;
+		
+		if (n == 1)
+		  cout<<"0"<<"\n";
+		else if ((n & (n-1)) == 0)
+			cout<<"0"<<"\n";
+		else
+		{
+			long long count = 0, tmp, tmp1;
+		tmp = n;
+		while (tmp)
+		{
+			count++;
+			tmp >>= 1;
+		}
+		tmp = llabs((1<<count) - n);
+		tmp1 = llabs(n - (1<<count-1));
+		
+		if (tmp > tmp1)
+			  cout<<tmp1<<"\n";
+		else
+			cout<<tmp<<"\n";
+		}
+	}
+	return 0;
+}
