@@ -1,0 +1,40 @@
+int
+getMaxOf4value (int a, int b, int c, int d)
+{
+  int count = 0;
+  while (a || b || c || d)
+  {
+    if (a)
+      a--;
+    if (b)
+      b--;
+    if (c)
+      c--;
+    if (d)
+      d--;
+    count++;
+   }
+  return count;
+}
+
+or
+
+int
+getMaxOf4Value (int a, int b, int c, int d)
+{
+  int res1, res2, k, n;
+
+  n = a-b;
+  k = (c>>31) & 1;
+  res1 = a - (k*c);
+
+  n = c-d;
+  k = (n>>31) & 1;
+  res2 = c - (k*n);
+
+  n = res1-res2;
+  k = (n>>31) & 1;
+  res2 = res1 - (k*n);
+  
+  return res2;
+}
