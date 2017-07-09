@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+long
+reverse(long it)
+{
+	long res = 0;
+	while (it)
+	{
+		res = res * 10 + (it % 10);
+		it /= 10;
+	}
+	return res;
+}
+
+int main() {
+    long i, j, k, count = 0;
+    cin>>i>>j>>k;
+    
+    for (long it = i; it <= j; it++)
+    {
+    	long Rnu = reverse(it);
+    	
+    	if (!((Rnu - it) % k))
+    	{
+    		count++;
+		}
+	}
+	cout<<count;
+    return 0;
+}
