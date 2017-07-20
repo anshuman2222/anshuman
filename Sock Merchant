@@ -1,0 +1,37 @@
+#include <iostream>
+#include <map>
+#include <vector>
+
+using namespace std;
+
+int sockMerchant(int n, vector <int> ar) {
+   map<int,int> m;
+    vector<int>::iterator it;
+    map<int,int>::iterator it1;
+    int count = 0;
+    for (it = ar.begin(); it != ar.end(); it++)
+    {
+        m[*it] += 1;
+    }
+    for (it1 = m.begin(); it1 != m.end(); it1++)
+    {
+    	while (it1 -> second !=0  && it1 -> second > 1)
+    	{
+    		count++;
+    		it1 -> second /= 2;
+		}
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> ar(n);
+    for(int ar_i = 0; ar_i < n; ar_i++){
+       cin >> ar[ar_i];
+    }
+    int result = sockMerchant(n, ar);
+    cout << result << endl;
+    return 0;
+}
