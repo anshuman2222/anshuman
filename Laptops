@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t, a, b, flag = 0;
+    cin>>t;
+
+    while (t--)
+    {
+        cin>>a>>b;
+
+        if ((a > b) || (b > a))
+        {
+            flag++;
+        }
+    }
+    if (flag >= 2)
+    {
+        cout<<"Happy Alex\n";
+    }
+    else
+    {
+        cout<<"Poor Alex\n";
+    }
+    return 0;
+}
