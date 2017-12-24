@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long no, even = 0, odd = 0, sum = 0;
+    cin>>no;
+
+    even = no / 2;
+    odd = (no + 1) / 2;
+
+    sum = (2 * ((even * (even + 1)) / 2)) - (odd * odd);
+    cout<<sum<<"\n";
+
+    return 0;
+}
